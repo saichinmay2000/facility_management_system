@@ -1,4 +1,7 @@
 import 'package:facility_management_system/adminhome.dart';
+import 'package:facility_management_system/forget_passcode.dart';
+import 'package:facility_management_system/manager_home.dart';
+import 'package:facility_management_system/worker_home.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -10,6 +13,7 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     String dropdownValue = 'Please Select';
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: SafeArea(
         child: Center(
@@ -42,7 +46,9 @@ class Login extends StatelessWidget {
                   width: MediaQuery.of(context).size.width,
                   child: TextField(
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100)
+                      ),
                       labelText: 'User-ID',
                       hintText: 'Enter UserID',
                     ),
@@ -56,7 +62,9 @@ class Login extends StatelessWidget {
                   child: TextField(
                     obscureText: true,
                     decoration: InputDecoration(
-                      border: OutlineInputBorder(),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(100)
+                      ),
                       labelText: 'Password',
                       hintText: 'Enter Password',
                     ),
@@ -92,8 +100,11 @@ class Login extends StatelessWidget {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   child: ElevatedButton(
-                    style: ButtonStyle(
-                        backgroundColor: MaterialStateProperty.all(Colors.deepPurple)
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(100.0)
+                        ),
+                        primary: Colors.deepPurple
                     ),
                     onPressed: (){
                       Navigator.push(
@@ -102,10 +113,56 @@ class Login extends StatelessWidget {
                       );
                     },
                     child: Text(
-                      "Login"
+                      "Login as Admin"
                     ),
                   ),
                 )
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8, 5, 8, 8),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(100.0)
+                        ),
+                        primary: Colors.deepPurple
+                    ),
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => ManagerHome()),
+                      );
+                    },
+                    child: Text(
+                        "Login as Manager"
+                    ),
+                  ),
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.fromLTRB(8, 5, 8, 8),
+                child: Container(
+                  width: MediaQuery.of(context).size.width,
+                  child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(100.0)
+                        ),
+                        primary: Colors.deepPurple
+                    ),
+                    onPressed: (){
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) => WorkerHome()),
+                      );
+                    },
+                    child: Text(
+                        "Login as Employee"
+                    ),
+                  ),
+                ),
               ),
               Padding(
                   padding: const EdgeInsets.fromLTRB(8, 25, 8, 8),
@@ -113,7 +170,12 @@ class Login extends StatelessWidget {
                     width: MediaQuery.of(context).size.width,
                     child: Center(
                       child: InkWell(
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(builder: (context) => ForgetPasscode()),
+                          );
+                        },
                         child: Text(
                             " Forget Password ? Click here to reset.",
                         ),

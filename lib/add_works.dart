@@ -80,8 +80,11 @@ class AddWorks extends StatelessWidget {
                   Container(
                     width: MediaQuery.of(context).size.width,
                     child: ElevatedButton(
-                        style: ButtonStyle(
-                            backgroundColor: MaterialStateProperty.all(Colors.deepPurple)
+                        style: ElevatedButton.styleFrom(
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(100.0)
+                            ),
+                            primary: Colors.deepPurple
                         ),
                         onPressed: (){
 

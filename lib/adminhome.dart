@@ -135,28 +135,40 @@ class AdminHome extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
-                    color: Colors.black,
+                    color: Colors.black54,
                   ),
                   height: 200,
                   width: 200,
                   // color: Colors.black,
                   child: Stack(
+                    alignment: AlignmentDirectional.center,
                     children: <Widget>[
-                      Image.asset("assets/fms.png")
+                      // Image.asset("assets/fms.png")
+                      Text("Admins",
+                        style: TextStyle(
+                            fontSize: 25,
+                            color: Colors.white
+                        ),)
                     ],
                   ),
                 ),
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
-                    color: Colors.black
+                    color: Colors.black54
                   ),
                   height: 200,
                   width: 200,
                   // color: Colors.black,
                   child: Stack(
+                    alignment: AlignmentDirectional.center,
                     children: <Widget>[
-                      Image.asset("assets/fms.png")
+                      // Image.asset("assets/fms.png")
+                      Text("Approvals",
+                        style: TextStyle(
+                            fontSize: 25,
+                            color: Colors.white
+                        ),)
                     ],
                   ),
                 )
@@ -180,9 +192,9 @@ class AdminHome extends StatelessWidget {
                     alignment: AlignmentDirectional.center,
                     children: <Widget>[
                       // Image.asset("assets/fms.png")
-                      Icon(Icons.person,
-                      color: Colors.white,
-                      size: 50,),
+                      // Icon(Icons.person,
+                      // color: Colors.white,
+                      // size: 50,),
                       Text("Managers",
                       style: TextStyle(
                         fontSize: 25,
@@ -194,19 +206,55 @@ class AdminHome extends StatelessWidget {
                 Container(
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(25),
-                    color: Colors.black
+                    color: Colors.black54
                   ),
                   height: 200,
                   width: 200,
                   // color: Colors.black,
                   child: Stack(
+                    alignment: AlignmentDirectional.center,
                     children: [
-                      Image.asset("assets/fms.png"),
-                      Text("Hello World",
-                      style: TextStyle(
-                        color: Colors.white,
-                      ),),
+                      // Image.asset("assets/fms.png"),
+                      Text("Tasks Scheduled",
+                        style: TextStyle(
+                            fontSize: 25,
+                            color: Colors.white
+                        ),)
                     ],
+                  ),
+                )
+              ],
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Column(
+              children: <Widget>[
+                InkWell(
+                  onTap: (){
+                    Navigator.push(context,
+                        MaterialPageRoute(builder: (context) => AddWorks())
+                    );
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(50),
+                        color: Colors.teal
+                    ),
+                    height: 100,
+                    width: MediaQuery.of(context).size.width,
+                    // color: Colors.black,
+                    child: Stack(
+                      alignment: AlignmentDirectional.center,
+                      children: [
+                        // Image.asset("assets/fms.png"),
+                        Text("Add Tasks",
+                          style: TextStyle(
+                              fontSize: 25,
+                              color: Colors.white
+                          ),)
+                      ],
+                    ),
                   ),
                 )
               ],
