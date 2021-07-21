@@ -13,6 +13,7 @@ class Login extends StatelessWidget {
   Widget build(BuildContext context) {
     String dropdownValue = 'Please Select';
     return Scaffold(
+
       resizeToAvoidBottomInset: false,
       backgroundColor: Colors.white,
       body: SafeArea(
@@ -36,7 +37,7 @@ class Login extends StatelessWidget {
                   ),
                   child:Image.asset(
                       "assets/fms.png",
-                      width: 250,
+                      width: 150,
                   )
                 ),
               ),

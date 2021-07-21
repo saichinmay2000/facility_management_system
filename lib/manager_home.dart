@@ -1,3 +1,4 @@
+import 'package:facility_management_system/assign_works.dart';
 import 'package:flutter/material.dart';
 class ManagerHome extends StatelessWidget {
   const ManagerHome({Key? key}) : super(key: key);
@@ -77,7 +78,7 @@ class ManagerHome extends StatelessWidget {
               ),
               title: Text('Assign Works'),
               onTap: () {
-                Navigator.pop(context);
+                Navigator.push(context, MaterialPageRoute(builder: (context) => AssignWork()));
               },
             ),
             // ListTile(
